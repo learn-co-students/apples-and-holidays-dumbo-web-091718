@@ -34,10 +34,8 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def format(holiday)
-  formatted = []
-  holiday = holiday.to_s.gsub("_", " ")
-  holiday.split(" ").each {|word| formatted << word.capitalize}
-  return formatted.join(" ")
+  holiday_words = holiday.to_s().split("_")
+  holiday_words.map {|word| word.capitalize()}.join(" ")
 end
 
 def all_holidays_with_bbq(holiday_hash)
